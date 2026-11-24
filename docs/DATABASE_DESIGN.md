@@ -4,6 +4,8 @@ Status: planning
 
 ## Core entities
 
+Authentication entities include `users`, `user_sessions`, `email_verification_tokens`, `password_reset_tokens`, and `authentication_rate_limits`.
+
 - users
 - sessions
 - classes

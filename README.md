@@ -46,6 +46,10 @@ The initial Phase 0 planning commit is on `main` and was pushed to GitHub.
 - [Testing Strategy](docs/TESTING_STRATEGY.md)
 - [Decisions](docs/DECISIONS.md)
 - [Phase 1 Readiness and Audit](docs/PHASE_1_READINESS.md)
+- [Authentication Architecture](docs/AUTHENTICATION_ARCHITECTURE.md)
+- [Authentication API](docs/AUTHENTICATION_API.md)
+- [Local Email Development](docs/LOCAL_EMAIL_DEVELOPMENT.md)
+- [SMTP Configuration](docs/SMTP_CONFIGURATION.md)
 - [Local Development](docs/LOCAL_DEVELOPMENT.md)
 - [Backup and Restoration](docs/BACKUP_RESTORE.md)
 

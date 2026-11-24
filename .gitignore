@@ -19,5 +19,7 @@ uploads/
 storage/
 backups/
 .vivi/
+.development-outbox/
+backend/tests/.test-outbox/
 .vscode/*
 !.vscode/extensions.json

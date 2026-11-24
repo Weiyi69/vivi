@@ -1,6 +1,6 @@
 # Vivi Security
 
-Status: planning
+Status: planning plus Phase 2 implementation
 
 ## Security baseline
 

@@ -2,11 +2,15 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from app.api.auth import router as auth_router
 from app.api.health import router as health_router
 from app.core.config import get_settings
 from app.core.errors import register_error_handlers
 from app.core.logging import configure_logging
-from app.core.middleware import RequestCorrelationMiddleware
+from app.core.middleware import (
+    RequestCorrelationMiddleware,
+    TrustedOriginAndCsrfMiddleware,
+)
 
 
 def create_app() -> FastAPI:
@@ -15,6 +19,9 @@ def create_app() -> FastAPI:
     app = FastAPI(title=settings.app_name)
     app.add_middleware(RequestCorrelationMiddleware)
     app.add_middleware(
+        TrustedOriginAndCsrfMiddleware, trusted_origins=settings.trusted_origins
+    )
+    app.add_middleware(
         CORSMiddleware,
         allow_origins=settings.cors_origins,
         allow_credentials=True,
@@ -22,6 +29,7 @@ def create_app() -> FastAPI:
         allow_headers=["Content-Type", "X-Request-ID", "X-CSRF-Token"],
     )
     app.include_router(health_router, prefix="/api/v1")
+    app.include_router(auth_router, prefix="/api/v1")
     register_error_handlers(app)
     return app
 
