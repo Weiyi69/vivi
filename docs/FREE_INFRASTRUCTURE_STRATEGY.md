@@ -30,18 +30,18 @@ The RTX 2060 is likely sufficient for quantized 1B-4B-class models or CPU fallba
 
 ## Candidate local generation
 
-- Preferred initial benchmark: Qwen2.5 3B or Qwen3 4B, if the selected model artifacts and license meet acceptance
+- Preferred initial benchmark: `Qwen3-4B-Instruct-2507`, because it is Apache-2.0 licensed and provides a useful small-model quality floor
+- Hardware fallback: `Qwen2.5-1.5B-Instruct`, Apache-2.0 licensed
 - Ollama package itself must be reviewed as it is added
-- Fallback: Qwen2.5 1.5B or 0.5B
 
-The Ollama listing indicates Qwen2.5 models except 3B and 72B are Apache 2.0; the 3B variant was therefore not selected as the default. Qwen3 artifacts require final Hugging Face/Ollama license verification before adoption.
+Both model candidates require an Ollama artifact and license check before final selection. A 4B model is only a default candidate; the actual quantized weight size, Ollama memory footprint, 4K/8K-context performance, response quality, and instruction adherence must be benchmarked. A 1.5B model is the resource fallback. A 3B Qwen2.5 variant was not selected because the model family documentation identifies a non-Apache license for that variant.
 
 ## Candidate embeddings
 
-- `intfloat/multilingual-e5-base` (768 dimensions)
-- `BAAI/bge-m3` (multilingual, 1024 dimensions, verify final model license)
+- Preferred initial embedding model: `intfloat/multilingual-e5-base` (768 dimensions, MIT license)
+- Upgrade candidate: `BAAI/bge-m3` (1024 dimensions, MIT license, greater memory and pipeline complexity)
 
-Both candidates are locally hostable. The selected model must have a license suitable for the deployed use case and must be recorded in a final dependency/model decision.
+The 768-dimensional E5 base model is the lower-risk MVP candidate because it is MIT licensed, broadly multilingual, and has a fixed modest embedding size. BGE-M3 supports more languages and more retrieval modes but is more resource-intensive and unnecessary for a first implementation. The selected model and exact revision must be recorded before embedding migrations are introduced.
 
 ## Operating cost reality
 

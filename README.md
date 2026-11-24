@@ -4,17 +4,17 @@ Vivi is a planned, self-hostable, AI-powered learning platform for organizing cl
 
 ## Planning status
 
-The repository is currently in **Phase 0 / Phase 1 planning preparation**. No application implementation is complete.
+The repository is in **Phase 1 implementation verification**. The foundation builds and the backend health/migration checks have been executed.
 
-The GitHub remote is empty. The local workspace has no existing source files or Git history.
+The initial Phase 0 planning commit is on `main` and was pushed to GitHub.
 
 ## Repository baseline
 
-- Frontend planned: Next.js, React, TypeScript, Tailwind CSS
-- Backend planned: FastAPI, Pydantic, SQLAlchemy 2.x, Alembic
-- Database planned: PostgreSQL with pgvector
-- AI planned: Ollama plus a replaceable provider interface
-- Storage planned: local filesystem behind a storage abstraction
+- Frontend: Next.js, React, TypeScript, Tailwind CSS
+- Backend: FastAPI, Pydantic, SQLAlchemy 2.x, Alembic
+- Database: PostgreSQL
+- AI: provider contract only; no model or paid API
+- Storage: local-storage contract only
 - Package managers: pnpm and uv
 
 ## Local environment observed
@@ -25,10 +25,11 @@ The GitHub remote is empty. The local workspace has no existing source files or 
 - 206 GB free on C:, 760 GB free on D:
 - Node.js 24.14.0
 - pnpm 10.34.9
-- Python 3.14.10
+- Python 3.12.15 via uv
 - uv 0.13.1
 - Git 2.53.0
-- Docker, Ollama, PostgreSQL, and pgvector are not currently installed
+- Docker and Ollama are not installed
+- PostgreSQL is available locally for development
 
 ## Documentation
 
@@ -44,6 +45,9 @@ The GitHub remote is empty. The local workspace has no existing source files or 
 - [Free Infrastructure Strategy](docs/FREE_INFRASTRUCTURE_STRATEGY.md)
 - [Testing Strategy](docs/TESTING_STRATEGY.md)
 - [Decisions](docs/DECISIONS.md)
+- [Phase 1 Readiness and Audit](docs/PHASE_1_READINESS.md)
+- [Local Development](docs/LOCAL_DEVELOPMENT.md)
+- [Backup and Restoration](docs/BACKUP_RESTORE.md)
 
 ## License and zero-cost scope
 

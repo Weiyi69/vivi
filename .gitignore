@@ -18,5 +18,6 @@ Thumbs.db
 uploads/
 storage/
 backups/
+.vivi/
 .vscode/*
 !.vscode/extensions.json

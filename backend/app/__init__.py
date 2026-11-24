@@ -1,0 +1,1 @@
+"""Vivi backend application package."""

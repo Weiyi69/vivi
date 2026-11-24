@@ -53,7 +53,10 @@ User Account -> Classes/Subjects -> Study Kits -> Materials and learning resourc
 
 ## Product decisions requiring approval
 
-- Email verification implementation and password-reset delivery
-- YouTube transcript retrieval policy
-- Postgres-backed queue versus a future broker
-- Initial local model size and context profile
+- The final Phase 1 foundation plan
+- The initial local model after benchmark validation
+- The initial embedding model after retrieval validation
+- Email delivery policy for production
+- YouTube acquisition scope
+- Material combining semantics
+- Catalog moderation and licensing model

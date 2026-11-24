@@ -4,19 +4,23 @@ Status: planning
 
 ## Phase 0: Product discovery
 
-Status: in progress
+Status: complete and published
 
 - Prepare PRD and feature inventory
 - Confirm local and remote repository state
 - Record unresolved requirements
-- Acceptance: approved scope and phase plan
+- Acceptance: repository baseline, scope, architecture, and free-cost assumptions documented
 
 ## Phase 1: Foundation
+
+Status: implementation complete, final verification in progress
 
 - Initialize monorepo structure
 - Establish frontend, backend, database, migrations, and test infrastructure
 - Add core configuration and Docker Compose
 - Acceptance: documented baseline builds and tests start successfully
+
+See [Phase 1 Readiness](PHASE_1_READINESS.md) for the detailed implementation plan and approval gate.
 
 ## Phase 2: Authentication
 

@@ -23,7 +23,9 @@ Status: planning
 
 ## Ownership model
 
-Every private record must derive access from a `user_id`. Study kits belong to a class and owner. A material belongs to the kit unless future combining rules explicitly create a shared/reference model.
+Private resources must have authorization derivable through an explicit owner or a parent owned by the user. Study kits belong to a class and owner. A material belongs to a kit unless future combining rules explicitly create a same-owner reference or snapshot model.
+
+Every write and read of child records must verify the owner by joining through the ownership chain. A child table should not be trusted solely because it has a `user_id` copy or because the frontend supplied an owner value.
 
 ## Initial relationships
 
